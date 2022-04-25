@@ -1,7 +1,7 @@
 pipeline {
     agent {
       docker  {
-       image 'gradle:jdk8'
+       image 'hedlund/gradlew:8'
       }
     }
     stages {
