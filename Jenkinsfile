@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+      docker  {
+       image 'gradle:jdk8'
+      }
+    }
     stages {
         stage('Test') {
             steps {
