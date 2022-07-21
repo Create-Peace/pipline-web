@@ -1,10 +1,10 @@
 const path = require("path");
 const webpack = require('webpack')
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+// const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 const opt = {
   mode: "development",
-  devtool: "inline-source-map",
+  devtool: "source-map",
   entry: "./src/components/HelloWorld.js",
   target: ['web', 'es2020'],
   externals: {
@@ -33,7 +33,7 @@ const opt = {
   },
   plugins: [
     // make sure to include the plugin for the magic
-    new VueLoaderPlugin(),
+    // new VueLoaderPlugin(),
   ],
 };
 const compiler = webpack(opt)
