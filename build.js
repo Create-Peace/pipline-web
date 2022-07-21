@@ -6,18 +6,16 @@ const opt = {
   mode: "development",
   devtool: "inline-source-map",
   entry: "./src/components/HelloWorld.js",
-  // experiments: {
-  //   outputModule: true,
-  // },
+  target: ['web', 'es2020'],
   externals: {
     'vue': "Vue"
   },
   output: {
-    libraryTarget: 'umd',
-    // library: {
-    //   name: "library",
-    //   type: "var",
-    // },
+    // libraryTarget: 'window',
+    library: {
+      name: "library",
+      type: "var",
+    },
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
