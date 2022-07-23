@@ -21,7 +21,7 @@ module.exports = (env) => {
       }),
     ],
     resolve:{  //配置模块如会解析
-       extensions:['.vue','.js','.json'],//引入这些文件 可以不带后缀 按顺序解析
+       extensions:['.vue','.js', '.tsx', '.json'],//引入这些文件 可以不带后缀 按顺序解析
        alias:{
            '@':join('../src'), //@方式引入资源
        }
@@ -33,7 +33,7 @@ module.exports = (env) => {
           loader: "vue-loader",
         }, // 它会应用到普通的 `.js` 文件以及 `.vue` 文件中的 `<script>` 块
         {
-          test: /\.m?(t|j)s$/,
+          test: /\.m?tsx|js$/,
           exclude: /(node_modules|bower_components)/,
           use: {
             loader: "babel-loader",
