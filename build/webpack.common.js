@@ -5,7 +5,7 @@ const { join } = require("path");
 
 module.exports = (env) => {
   return {
-    entry: "./src/main.js", //入口文件
+    entry: "./src/main.ts", //入口文件
     stats: 'errors-only',//仅错误时显示logo
     output: {
       filename: "assets/js/[name].code.js",
@@ -17,6 +17,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "../public/index.html"),
         filename: "index.html", //输出的文件名
+        title: 'Vue3 APP'
       }),
     ],
     resolve:{  //配置模块如会解析
@@ -32,13 +33,13 @@ module.exports = (env) => {
           loader: "vue-loader",
         }, // 它会应用到普通的 `.js` 文件以及 `.vue` 文件中的 `<script>` 块
         {
-          test: /\.m?js$/,
+          test: /\.m?(t|j)s$/,
           exclude: /(node_modules|bower_components)/,
           use: {
             loader: "babel-loader",
-            // options: {
-              // presets: ["@babel/preset-env"],
-            // },
+            options: {
+              cacheDirectory: true,
+            },
           },
         },
         {

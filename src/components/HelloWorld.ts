@@ -3,21 +3,30 @@ import Item from './Item'
 
 export default defineComponent(() => {
 
-  const keys = ref([1, 2, 3, 4, 5])
-  const values = ref({
+
+  interface Value {
+    [numberKey: number]: string
+  }
+
+  interface Data {
+    value: string
+  }
+
+  const keys = ref<number[]>([1, 2, 3, 4, 5])
+  const values = ref<Value>({
     1: 'first',
     2: 'second',
     3: 'third',
     4: 'forth',
     5: 'fifth'
   })
-  const data = ref([
+  const data = ref<Data[]>([
     {value: 'first'},
     {value: 'second'},
     {value: 'third'},
     {value: 'forth'}
   ])
-  const title = ref('123')
+  const title = ref<string>('123')
 
   const handleChangeTitle = () => {
     title.value = title.value === 'X-Change' ? '123' : 'X-Change'

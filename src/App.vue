@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld'
+import HelloWorld from './components/HelloWorld.ts'
 </script>
 
 <style>
